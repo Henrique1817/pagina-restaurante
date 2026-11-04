@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  
+  <!-- Título e Descrição Dinâmicos com Fallback Estático -->
+  <title id="page-title">Brava Smash Burger | O Smash Burger Artesanal do Bairro</title>
+  <meta name="description" id="meta-description" content="Pede direto no WhatsApp, sem taxa de aplicativo. Smash burgers artesanais prensados na crosta perfeita, batata crocante e entrega rápida.">
+  
+  <!-- Favicon Local em SVG -->
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  
+  <!-- Meta Tags de Compartilhamento Open Graph (1200x630, pt_BR) -->
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:title" id="meta-og-title" content="Brava Smash Burger - Pedido Rápido pelo WhatsApp">
+  <meta property="og:description" id="meta-og-description" content="Pede direto no WhatsApp, sem taxa de aplicativo. Smash burgers prensados na crosta perfeita com entrega rápida no seu bairro!">
+  <meta property="og:image" id="meta-og-image" content="img/og-image.webp">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:type" content="image/webp">
+  
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" id="meta-twitter-title" content="Brava Smash Burger - Peça no WhatsApp">
+  <meta name="twitter:description" id="meta-twitter-description" content="Pede direto no WhatsApp, sem taxa de aplicativo.">
+  <meta name="twitter:image" id="meta-twitter-image" content="img/og-image.webp">
+  
+  <!-- CSS Próprio Local (Zero Bloqueio Externo / Zero CDN) -->
+  <link rel="stylesheet" href="css/estilo.css">
+</head>
+<body>
+  <!-- ======================================================================
+       1. BARRA DE URGÊNCIA COM NOME DA CAMPANHA E CONTADOR
+       ====================================================================== -->
+  <aside id="urgency-bar" class="urgency-bar" aria-label="Campanha Promocional"></aside>
+
+  <!-- ======================================================================
+       2. CABEÇALHO FIXO COM LOGO, LINK DO CARDÁPIO E CARRINHO (CONTADOR + TOTAL)
+       ====================================================================== -->
+  <header class="site-header" id="site-header">
+    <div class="container header-container">
+      <a href="#hero-section" class="brand-wrapper" aria-label="Brava Smash Burger Início">
+        <div class="brand-logo-frame">
+          <picture>
+            <source srcset="img/logo.webp" type="image/webp">
+            <img src="img/favicon.svg" alt="Logo Brava" width="36" height="36">
+          </picture>
+        </div>
+        <div class="brand-info">
+          <span class="brand-name" id="header-brand-name">Brava</span>
+          <span class="brand-status-tag status-open" id="header-brand-status">
+            <span class="status-dot"></span>
+            <span id="header-status-text">Aberto agora</span>
+          </span>
+        </div>
+      </a>
+
+      <nav class="header-nav-right" aria-label="Navegação rápida">
+        <a href="#cardapio-section" class="header-menu-link">Cardápio</a>
+        <button type="button" class="header-cart-btn" id="btn-header-cart" aria-label="Abrir carrinho de compras">
+          <span>🛒</span>
+          <span class="header-cart-badge" id="header-cart-badge">0</span>
+          <span class="header-cart-total" id="header-cart-total">R$ 0,00</span>
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ======================================================================
+       3. DOBRA PRINCIPAL (HERO)
+       Título com benefício central, subtítulo "pede direto no WhatsApp, sem
+       taxa de aplicativo", 2 botões, foto grande do prato principal e nota Google
+       ====================================================================== -->
+  <section class="hero-section" id="hero-section">
+    <div class="container hero-grid">
+      <div class="hero-text-col">
+        <span class="hero-badge-tagline" id="hero-badge-tagline">O Smash Burger do Bairro</span>
+        <h1 class="hero-title" id="hero-main-title">
+          O Smash Burger <span>Mais Suculento</span> do Bairro
+        </h1>
+        <p class="hero-subtitle" id="hero-subtitle">
+          <span>⚡</span> Pede direto no WhatsApp, sem taxa de aplicativo
+        </p>
+        <p class="hero-desc" id="hero-desc">
+          Prensado na crosta perfeita em chapa de ferro fundido, pão brioche amanteigado selado, molhos da casa e batatas crocantes.
+        </p>
+
+        <div class="hero-actions-row">
+          <a href="#cardapio-section" class="btn-hero-primary" id="btn-hero-cardapio">
+            <span>Ver Cardápio</span> <span>↓</span>
+          </a>
+          <a href="https://wa.me/5511998765432" target="_blank" rel="noopener noreferrer" class="btn-hero-whatsapp" id="btn-hero-whatsapp">
+            <span>Falar no WhatsApp</span> <span>💬</span>
+          </a>
+        </div>
+
+        <!-- Prova Social Google (Renderizado apenas com nota real) -->
+        <div id="hero-google-rating-wrap"></div>
+      </div>
+
+      <div class="hero-media-col">
+        <div class="hero-image-card">
+          <picture>
+            <source srcset="img/burger-double.webp" type="image/webp">
+            <img src="img/burger-double.webp" alt="Brava Double Smash Burger" width="600" height="450" loading="eager">
+          </picture>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       4. COMBOS EM DESTAQUE (3 A 4 CARDS COM PREÇO ANTIGO RISCADO E ITENS INCLUSOS)
+       ====================================================================== -->
+  <section class="combos-section" id="combos-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-badge">Economize com os Combos</span>
+        <h2 class="section-heading">Combos em Destaque</h2>
+        <p class="section-sub">Mais sabor por um valor especial para você ou para a família toda</p>
+      </div>
+      <div class="combos-grid" id="combos-grid"></div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       5. DIFERENCIAIS (4 ITENS CURTOS E CONCRETOS)
+       ====================================================================== -->
+  <section class="diferenciais-section" id="diferenciais-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-badge">Por que pedir com a gente</span>
+        <h2 class="section-heading">Nossos Diferenciais</h2>
+        <p class="section-sub">Feito artesanalmente com ingredientes de verdade</p>
+      </div>
+      <div class="diferenciais-grid" id="diferenciais-grid"></div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       6. CARDÁPIO COMPLETO (FILTRADO POR CATEGORIA + BUSCA POR NOME)
+       ====================================================================== -->
+  <main class="cardapio-section" id="cardapio-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-badge">Escolha o seu</span>
+        <h2 class="section-heading">Cardápio Completo</h2>
+        <p class="section-sub">Monte seu pedido em poucos cliques e envie direto no WhatsApp</p>
+      </div>
+
+      <div class="cardapio-controls-box">
+        <!-- Busca por Nome em Tempo Real -->
+        <div class="search-input-wrapper">
+          <svg class="search-icon-svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="11" cy="11" r="8"></circle>
+            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+          </svg>
+          <input 
+            type="search" 
+            id="search-cardapio-input" 
+            class="search-input" 
+            placeholder="Buscar por nome do smash burger, batata ou bebida..." 
+            aria-label="Buscar produtos no cardápio"
+          >
+        </div>
+
+        <!-- Filtro por Categorias -->
+        <ul class="category-filter-list" id="category-filter-list" role="tablist" aria-label="Filtrar por categoria"></ul>
+      </div>
+
+      <!-- Grid de Produtos -->
+      <div class="products-grid" id="products-grid"></div>
+    </div>
+  </main>
+
+  <!-- ======================================================================
+       7. AVALIAÇÕES REAIS (RENDERIZA SÓ SE REVIEWS.LENGTH > 0)
+       ====================================================================== -->
+  <section class="avaliacoes-section" id="avaliacoes-section"></section>
+
+  <!-- ======================================================================
+       8. ENTREGA E RETIRADA (ENDEREÇO, HORÁRIO, TEMPO MÉDIO, RAIO)
+       ====================================================================== -->
+  <section class="entrega-retirada-section" id="entrega-retirada-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-badge">Como funciona</span>
+        <h2 class="section-heading">Entrega e Retirada</h2>
+        <p class="section-sub">Rapidez e cuidado da nossa chapa direto para você</p>
+      </div>
+      <div class="info-cards-grid" id="info-cards-grid"></div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       9. PERGUNTAS FREQUENTES EM ACCORDION
+       ====================================================================== -->
+  <section class="faq-section" id="faq-section">
+    <div class="container faq-container">
+      <div class="section-title-wrap">
+        <span class="section-badge">Tire suas dúvidas</span>
+        <h2 class="section-heading">Perguntas Frequentes</h2>
+        <p class="section-sub">Tudo o que você precisa saber sobre nosso atendimento direto</p>
+      </div>
+      <div class="faq-list" id="faq-list"></div>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       10. FECHAMENTO COM CHAMADA FINAL E BOTÃO GRANDE DE WHATSAPP
+       ====================================================================== -->
+  <section class="cta-fechamento-section" id="cta-fechamento-section">
+    <div class="container cta-box">
+      <h2 class="cta-title" id="cta-final-title">Deu vontade de um burger de verdade?</h2>
+      <p class="cta-desc" id="cta-final-desc">
+        Pede agora direto com a cozinha no WhatsApp em menos de 1 minuto, sem taxas abusivas e com entrega quentinha.
+      </p>
+      <a href="https://wa.me/5511998765432" target="_blank" rel="noopener noreferrer" class="btn-cta-big-whatsapp" id="btn-cta-final-whatsapp">
+        <span>💬</span> <span>Fazer Pedido no WhatsApp</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ======================================================================
+       11. RODAPÉ COM ENDEREÇO, HORÁRIO, TELEFONE E INSTAGRAM
+       ====================================================================== -->
+  <footer class="site-footer" id="site-footer"></footer>
+
+  <!-- ======================================================================
+       12. BOTÃO FLUTUANTE DE WHATSAPP E BARRA INFERIOR NO CELULAR COM TOTAL
+       ====================================================================== -->
+  <!-- Botão Flutuante Direto do WhatsApp -->
+  <a href="https://wa.me/5511998765432" target="_blank" rel="noopener noreferrer" class="floating-whatsapp-btn" id="floating-whatsapp-btn" aria-label="Abrir conversa no WhatsApp">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91C2.13 13.66 2.59 15.36 3.45 16.86L2.05 22L7.3 20.62C8.75 21.41 10.38 21.83 12.04 21.83C17.5 21.83 21.95 17.38 21.95 11.92C21.95 9.27 20.92 6.78 19.05 4.91C17.18 3.03 14.69 2 12.04 2M12.05 3.67C14.25 3.67 16.31 4.53 17.87 6.09C19.42 7.65 20.28 9.72 20.28 11.92C20.28 16.46 16.58 20.15 12.04 20.15C10.56 20.15 9.11 19.76 7.85 19L7.55 18.83L4.43 19.65L5.26 16.61L5.06 16.29C4.24 14.99 3.81 13.47 3.81 11.91C3.81 7.37 7.5 3.67 12.05 3.67M9.05 7.78C8.92 7.78 8.7 7.83 8.52 8.03C8.33 8.23 7.8 8.73 7.8 9.75C7.8 10.77 8.54 11.75 8.65 11.9C8.75 12.05 10.06 14.07 12.07 14.94C12.55 15.15 12.92 15.27 13.21 15.36C13.69 15.52 14.13 15.49 14.48 15.44C14.86 15.38 15.67 14.95 15.84 14.48C16.01 14 16.01 13.6 15.96 13.51C15.91 13.42 15.78 13.37 15.59 13.27C15.4 13.17 14.48 12.72 14.31 12.65C14.14 12.59 14.02 12.56 13.9 12.75C13.78 12.93 13.43 13.37 13.33 13.49C13.23 13.61 13.13 13.63 12.94 13.53C12.76 13.44 12.16 13.24 11.45 12.61C10.9 12.12 10.53 11.51 10.42 11.33C10.32 11.14 10.41 11.04 10.5 10.95C10.59 10.86 10.7 10.73 10.8 10.62C10.9 10.5 10.93 10.42 11 10.29C11.06 10.16 11.03 10.05 10.98 9.95C10.93 9.85 10.57 8.97 10.42 8.6C10.27 8.24 10.12 8.29 10 8.28C9.9 8.28 9.77 8.28 9.64 8.28C9.52 8.28 9.32 8.32 9.15 8.51C8.98 8.7 8.48 9.17 8.48 10.12C8.48 11.07 9.17 11.98 9.27 12.12L9.05 7.78Z"/>
+    </svg>
+  </a>
+
+  <!-- Barra Inferior Fixa no Celular com Total e Acesso à Sacola -->
+  <aside class="mobile-bottom-bar" id="mobile-bottom-bar" aria-label="Resumo do Pedido">
+    <div class="mobile-bar-total-box">
+      <span class="mobile-bar-qty" id="mobile-bar-qty">0 itens</span>
+      <strong class="mobile-bar-total" id="mobile-bar-total">R$ 0,00</strong>
+    </div>
+    <button type="button" class="mobile-bar-btn" id="btn-open-mobile-cart">
+      <span>Ver Pedido</span> <span>🛒</span>
+    </button>
+  </aside>
+
+  <!-- Drawer Lateral do Carrinho (Slide-over) -->
+  <div id="cart-drawer-root"></div>
+
+  <!-- Toasts de Notificação -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Scripts: Configuração Isolada + Aplicação -->
+  <script src="js/config.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

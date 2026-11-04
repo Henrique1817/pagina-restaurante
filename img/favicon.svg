@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="burgerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B" />
+      <stop offset="100%" stop-color="#D97706" />
+    </linearGradient>
+    <linearGradient id="pattyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#78350F" />
+      <stop offset="100%" stop-color="#451A03" />
+    </linearGradient>
+  </defs>
+  <!-- Top Bun -->
+  <path d="M12 28 C12 14 20 8 32 8 C44 8 52 14 52 28 Z" fill="url(#burgerGrad)" />
+  <!-- Sesame seeds -->
+  <circle cx="24" cy="18" r="1.5" fill="#FEF3C7" />
+  <circle cx="32" cy="14" r="1.5" fill="#FEF3C7" />
+  <circle cx="40" cy="18" r="1.5" fill="#FEF3C7" />
+  <circle cx="28" cy="22" r="1.5" fill="#FEF3C7" />
+  <circle cx="36" cy="22" r="1.5" fill="#FEF3C7" />
+  <!-- Lettuce -->
+  <path d="M10 30 C15 33 18 29 24 32 C30 29 34 33 40 30 C46 33 49 29 54 31 L53 34 C48 33 45 36 39 33 C33 36 29 32 23 35 C17 32 14 36 9 33 Z" fill="#10B981" />
+  <!-- Cheese -->
+  <polygon points="12,35 52,35 48,42 38,39 28,45 16,39" fill="#FBBF24" />
+  <!-- Smash Patty -->
+  <rect x="10" y="38" width="44" height="8" rx="4" fill="url(#pattyGrad)" />
+  <!-- Bottom Bun -->
+  <path d="M12 48 C12 48 12 56 32 56 C52 56 52 48 52 48 Z" fill="url(#burgerGrad)" />
+</svg>

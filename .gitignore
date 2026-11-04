@@ -1,0 +1,14 @@
+# Dependências e caches
+node_modules/
+.DS_Store
+Thumbs.db
+
+# Vercel
+.vercel
+
+# Logs
+*.log
+npm-debug.log*
+
+# Arquivos temporários
+*.tmp

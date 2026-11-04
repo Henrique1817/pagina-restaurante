@@ -1,0 +1,19 @@
+{
+  "name": "pagina-restaurante",
+  "version": "1.0.0",
+  "description": "Landing page de página única para restaurante de bairro focada em checkout direto pelo WhatsApp em menos de 60 segundos.",
+  "scripts": {
+    "start": "npx serve .",
+    "test": "node test/check-config.js"
+  },
+  "keywords": [
+    "landing-page",
+    "restaurante",
+    "delivery",
+    "whatsapp",
+    "sem-ifood",
+    "cardapio-digital"
+  ],
+  "author": "",
+  "license": "MIT"
+}
