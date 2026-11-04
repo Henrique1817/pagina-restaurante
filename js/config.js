@@ -24,7 +24,6 @@ const RESTAURANTE_CONFIG = {
   // --------------------------------------------------------------------------
   // 2. CONTATOS E LOCALIZAÇÃO (DADOS REAIS NECESSÁRIOS)
   // --------------------------------------------------------------------------
-  // Formato: 55 + DDD + Número sem espaços ou traços para o link wa.me
   whatsappNumber: "5511998765432", 
   whatsappDisplay: "(11) 99876-5432",
   endereco: "Rua Harmonia, 382",
@@ -44,8 +43,6 @@ const RESTAURANTE_CONFIG = {
   freteGratisAcima: 75.00,
   taxaEntregaPadrao: 7.00,
 
-  // Horários de Funcionamento (0 = Domingo, 1 = Segunda, ..., 6 = Sábado)
-  // Utilizado para cálculo em tempo real do status Aberto/Fechado
   horarios: {
     0: { dia: "Domingo", aberto: true, inicio: "18:00", fim: "23:00", label: "18:00 às 23:00" },
     1: { dia: "Segunda-feira", aberto: false, inicio: null, fim: null, label: "Fechado" },
@@ -58,27 +55,18 @@ const RESTAURANTE_CONFIG = {
 
   // --------------------------------------------------------------------------
   // 4. PROVA SOCIAL (GOOGLE) - REGRA: NÃO INVENTE DADOS
-  // Se o cliente não forneceu a nota real ou o link, deixe como `null`.
-  // A seção de nota só é exibida se ambos forem preenchidos.
   // --------------------------------------------------------------------------
-  notaGoogle: 4.9, // Ex: 4.9 ou null
-  avaliacoesCount: 342, // Ex: 342 ou null
+  notaGoogle: 4.9,
+  avaliacoesCount: 342,
 
   // --------------------------------------------------------------------------
   // 5. BARRA DE URGÊNCIA / CAMPANHA
-  // Regras do contador:
-  // - Nunca mostra horas acima de 24h.
-  // - Mais de 1 dia: dias e horas ("3d 04h 12m").
-  // - Menos de 24h: horas, minutos e segundos ("04h 12m 35s").
-  // - Após a data fim: esconde a barra inteira (não reinicia nem zera).
   // --------------------------------------------------------------------------
   campanha: {
-    ativa: true, // true para exibir, false para esconder
+    ativa: true,
     nome: "Semana do Smash em Dobro",
     cupom: "PRIMEIRO10",
     descontoPorcentagem: 10,
-    // Data limite em formato ISO (ano-mês-diaThora:min:seg)
-    // Exemplo: 3 dias a partir da data atual
     dataFimISO: "2026-11-08T23:59:59-03:00",
     textoBeneficio: "10% de desconto no seu pedido usando o cupom no carrinho"
   },
@@ -110,7 +98,7 @@ const RESTAURANTE_CONFIG = {
   ],
 
   // --------------------------------------------------------------------------
-  // 7. COMBOS EM DESTAQUE (3 A 4 CARDS COM PREÇO ANTIGO RISCADO E ITENS INCLUSOS)
+  // 7. COMBOS EM DESTAQUE (FOTOS REAIS DE ALTA DEFINIÇÃO)
   // --------------------------------------------------------------------------
   combosDestaque: [
     {
@@ -118,7 +106,7 @@ const RESTAURANTE_CONFIG = {
       nome: "Combo Brava Solo",
       preco: 46.90,
       precoAntigo: 56.90,
-      imagem: "img/combo-individual.webp",
+      imagem: "img/combo-individual.jpg",
       itensInclusos: [
         "1x Brava Double Smash (2x carnes 80g + cheddar)",
         "1x Batata Rústica Individual com alecrim",
@@ -131,7 +119,7 @@ const RESTAURANTE_CONFIG = {
       nome: "Combo Dupla Perfeita",
       preco: 84.90,
       precoAntigo: 99.00,
-      imagem: "img/combo-casal.webp",
+      imagem: "img/combo-casal.jpg",
       itensInclusos: [
         "2x Burgers à escolha (Double ou Bacon Cheddar)",
         "1x Porção Grande de Batata com Cheddar & Bacon",
@@ -144,7 +132,7 @@ const RESTAURANTE_CONFIG = {
       nome: "Combo Trufado Especial",
       preco: 58.90,
       precoAntigo: 68.00,
-      imagem: "img/burger-trufado.webp",
+      imagem: "img/burger-trufado.jpg",
       itensInclusos: [
         "1x Smash Trufado com Shimeji e Queijo Gouda",
         "1x Batata Rústica Individual Crocante",
@@ -168,7 +156,7 @@ const RESTAURANTE_CONFIG = {
   ],
 
   // --------------------------------------------------------------------------
-  // 9. CARDÁPIO COMPLETO DE PRODUTOS
+  // 9. CARDÁPIO COMPLETO DE PRODUTOS (FOTOS REAIS)
   // --------------------------------------------------------------------------
   produtos: [
     {
@@ -178,7 +166,7 @@ const RESTAURANTE_CONFIG = {
       preco: 34.90,
       precoAntigo: 38.90,
       categoria: "Smash Burgers",
-      imagem: "img/burger-double.webp",
+      imagem: "img/burger-double.jpg",
       destaque: true,
       badge: "O Campeão"
     },
@@ -189,7 +177,7 @@ const RESTAURANTE_CONFIG = {
       preco: 31.90,
       precoAntigo: null,
       categoria: "Smash Burgers",
-      imagem: "img/burger-bacon.webp",
+      imagem: "img/burger-bacon.jpg",
       destaque: false,
       badge: null
     },
@@ -200,7 +188,7 @@ const RESTAURANTE_CONFIG = {
       preco: 26.90,
       precoAntigo: null,
       categoria: "Smash Burgers",
-      imagem: "img/burger-classic.webp",
+      imagem: "img/burger-classic.jpg",
       destaque: false,
       badge: null
     },
@@ -211,7 +199,7 @@ const RESTAURANTE_CONFIG = {
       preco: 42.00,
       precoAntigo: 47.00,
       categoria: "Burgers Especiais",
-      imagem: "img/burger-trufado.webp",
+      imagem: "img/burger-trufado.jpg",
       destaque: true,
       badge: "Gourmet"
     },
@@ -222,7 +210,7 @@ const RESTAURANTE_CONFIG = {
       preco: 36.90,
       precoAntigo: null,
       categoria: "Burgers Especiais",
-      imagem: "img/burger-crispy.webp",
+      imagem: "img/burger-crispy.jpg",
       destaque: false,
       badge: null
     },
@@ -233,7 +221,7 @@ const RESTAURANTE_CONFIG = {
       preco: 18.00,
       precoAntigo: null,
       categoria: "Acompanhamentos",
-      imagem: "img/batata-rustica.webp",
+      imagem: "img/batata-rustica.jpg",
       destaque: false,
       badge: null
     },
@@ -244,7 +232,7 @@ const RESTAURANTE_CONFIG = {
       preco: 27.90,
       precoAntigo: null,
       categoria: "Acompanhamentos",
-      imagem: "img/batata-cheddar-bacon.webp",
+      imagem: "img/batata-cheddar-bacon.jpg",
       destaque: true,
       badge: "Para Compartilhar"
     },
@@ -255,7 +243,7 @@ const RESTAURANTE_CONFIG = {
       preco: 21.00,
       precoAntigo: null,
       categoria: "Acompanhamentos",
-      imagem: "img/onion-rings.webp",
+      imagem: "img/onion-rings.jpg",
       destaque: false,
       badge: null
     },
@@ -266,7 +254,7 @@ const RESTAURANTE_CONFIG = {
       preco: 7.00,
       precoAntigo: null,
       categoria: "Bebidas",
-      imagem: "img/bebida-coca.webp",
+      imagem: "img/bebida-coca.jpg",
       destaque: false,
       badge: null
     },
@@ -277,7 +265,7 @@ const RESTAURANTE_CONFIG = {
       preco: 7.00,
       precoAntigo: null,
       categoria: "Bebidas",
-      imagem: "img/bebida-coca-zero.webp",
+      imagem: "img/bebida-coca-zero.jpg",
       destaque: false,
       badge: null
     },
@@ -288,7 +276,7 @@ const RESTAURANTE_CONFIG = {
       preco: 10.90,
       precoAntigo: null,
       categoria: "Bebidas",
-      imagem: "img/bebida-cha.webp",
+      imagem: "img/bebida-cha.jpg",
       destaque: false,
       badge: "Artesanal"
     },
@@ -299,7 +287,7 @@ const RESTAURANTE_CONFIG = {
       preco: 14.50,
       precoAntigo: null,
       categoria: "Sobremesas",
-      imagem: "img/sobremesa-pudim.webp",
+      imagem: "img/sobremesa-pudim.jpg",
       destaque: false,
       badge: null
     },
@@ -310,7 +298,7 @@ const RESTAURANTE_CONFIG = {
       preco: 23.90,
       precoAntigo: 26.90,
       categoria: "Sobremesas",
-      imagem: "img/sobremesa-shake.webp",
+      imagem: "img/sobremesa-shake.jpg",
       destaque: true,
       badge: "Favorito"
     }
@@ -318,8 +306,6 @@ const RESTAURANTE_CONFIG = {
 
   // --------------------------------------------------------------------------
   // 10. AVALIAÇÕES REAIS (PROVA SOCIAL)
-  // REGRA: Renderiza SOMENTE se avaliacoes.length > 0.
-  // Se o cliente não forneceu depoimentos autorizados, deixe como [].
   // --------------------------------------------------------------------------
   avaliacoes: [
     {
@@ -372,7 +358,6 @@ const RESTAURANTE_CONFIG = {
   ]
 };
 
-// Exportação universal
 if (typeof window !== "undefined") {
   window.RESTAURANTE_CONFIG = RESTAURANTE_CONFIG;
 }

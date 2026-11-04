@@ -263,7 +263,6 @@
         ${c.badge ? `<span class="combo-badge">${sanitize(c.badge)}</span>` : ''}
         <div class="combo-media">
           <picture>
-            <source srcset="${sanitize(c.imagem)}" type="image/webp">
             <img src="${sanitize(c.imagem)}" alt="${sanitize(c.nome)}" width="600" height="400" loading="lazy">
           </picture>
         </div>
@@ -396,7 +395,6 @@
           ${p.badge ? `<span class="product-card-badge">${sanitize(p.badge)}</span>` : ''}
           <div class="product-card-media">
             <picture>
-              <source srcset="${sanitize(p.imagem)}" type="image/webp">
               <img src="${sanitize(p.imagem)}" alt="${sanitize(p.nome)}" width="600" height="450" loading="lazy">
             </picture>
           </div>
